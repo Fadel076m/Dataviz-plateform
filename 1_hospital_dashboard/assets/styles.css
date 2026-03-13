@@ -1,0 +1,152 @@
+/* styles.css - Thème médical professionnel */
+
+body {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header avec dégradé médical */
+.dashboard-header {
+    background: linear-gradient(90deg, #1a6ecc 0%, #3498db 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.2);
+}
+
+/* KPI Cards avec dégradés colorés */
+.kpi-card {
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.kpi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Couleurs spécifiques pour chaque KPI */
+.kpi-patients {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+}
+
+.kpi-duration {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.kpi-median {
+    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+}
+
+.kpi-cost {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.kpi-cost-day {
+    background: linear-gradient(135deg, #f39c12 0%, #d35400 100%);
+}
+
+.kpi-total {
+    background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+}
+
+/* Cartes de section */
+.analysis-section {
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+}
+
+/* Filtres */
+.filter-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+    margin-bottom: 25px;
+}
+
+/* Graphiques */
+.graph-container {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Boutons et éléments interactifs */
+.filter-dropdown .Select-control {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    transition: border-color 0.3s;
+}
+
+.filter-dropdown .Select-control:hover {
+    border-color: #3498db;
+}
+
+/* Titres */
+h3, h4, h5, h6 {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+h3 {
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h4 {
+    color: #3498db;
+    border-left: 4px solid #3498db;
+    padding-left: 10px;
+}
+
+/* Conclusion card */
+.conclusion-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+    border-left: 5px solid #3498db;
+    border-radius: 10px;
+}
+
+/* Badges et alertes */
+.badge-medical {
+    background: linear-gradient(135deg, #3498db, #1a6ecc);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+}
+
+/* Animation pour les KPI */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.kpi-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .kpi-card {
+        margin-bottom: 15px;
+    }
+    
+    .analysis-section {
+        padding: 15px;
+    }
+}

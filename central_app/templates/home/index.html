@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data Viz Analytics Platform — Hub central de dashboards analytiques sectoriels : hospitalier, assurance, bancaire, énergie.">
+    <title>Data Viz Analytics Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+
+    <!-- ── BACKGROUND PARTICLES ────────────────────────── -->
+    <div class="bg-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- ── HEADER ────────────────────────────────────────── -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo-group">
+                <div class="logo-icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <rect width="12" height="12" rx="3" fill="#6C63FF" opacity="0.9"/>
+                        <rect x="16" width="12" height="12" rx="3" fill="#00D4AA" opacity="0.9"/>
+                        <rect y="16" width="12" height="12" rx="3" fill="#FFB800" opacity="0.9"/>
+                        <rect x="16" y="16" width="12" height="12" rx="3" fill="#D4AF37" opacity="0.9"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="logo-name">DataViz</span>
+                    <span class="logo-tag">Analytics Platform</span>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <a href="#dashboards" class="nav-link">Dashboards</a>
+                <a href="#about" class="nav-link">À propos</a>
+                <span class="nav-badge">M2 — 2026</span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ── HERO ──────────────────────────────────────────── -->
+    <section class="hero" id="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                4 Secteurs • Données Temps Réel
+            </div>
+            <h1 class="hero-title">
+                Vos données
+                <span class="gradient-text">analytiques</span><br>
+                en un seul hub
+            </h1>
+            <p class="hero-subtitle">
+                Plateforme centralisée de visualisation décisionnelle pour piloter vos KPIs 
+                dans les secteurs hospitalier, assurantiel, bancaire et énergétique.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-value">4</span>
+                    <span class="stat-label">Secteurs</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-value">30+</span>
+                    <span class="stat-label">KPIs</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-value">35k+</span>
+                    <span class="stat-label">Observations</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-value">∞</span>
+                    <span class="stat-label">Filtres</span>
+                </div>
+            </div>
+            <a href="#dashboards" class="hero-cta">
+                Explorer les dashboards
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 3L17 10L10 17M3 10H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- ── DASHBOARD CARDS ────────────────────────────────── -->
+    <section class="dashboards-section" id="dashboards">
+        <div class="section-header">
+            <h2 class="section-title">Choisissez votre secteur</h2>
+            <p class="section-desc">Chaque dashboard est indépendant, interactif et optimisé pour la prise de décision</p>
+        </div>
+
+        <div class="cards-grid">
+            {% for sector in sectors %}
+            <article class="sector-card" 
+                     id="card-{{ sector.id }}"
+                     style="--accent: {{ sector.accent }}; --glow: {{ sector.glow }}; --gradient: {{ sector.gradient }};">
+                
+                <div class="card-bg-gradient"></div>
+                
+                <div class="card-top">
+                    <div class="card-icon-wrap">
+                        <span class="card-icon">{{ sector.icon }}</span>
+                        <div class="card-icon-ring"></div>
+                    </div>
+                    <div class="card-sector-badge">{{ sector.subtitle }}</div>
+                </div>
+
+                <div class="card-body">
+                    <h3 class="card-title">{{ sector.title }}</h3>
+                    <p class="card-desc">{{ sector.description }}</p>
+
+                    <div class="card-kpis">
+                        {% for kpi in sector.kpis %}
+                        <span class="kpi-tag">{{ kpi }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a href="{{ sector.url }}" class="card-btn" id="btn-{{ sector.id }}">
+                        <span>Ouvrir le dashboard</span>
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <path d="M9 3L15 9L9 15M3 9H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                    <div class="card-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Actif</span>
+                    </div>
+                </div>
+
+                <div class="card-glow-border"></div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- ── ABOUT ──────────────────────────────────────────── -->
+    <section class="about-section" id="about">
+        <div class="about-inner">
+            <div class="about-text">
+                <div class="about-badge">Stack Technique</div>
+                <h2>Architecture moderne<br>& scalable</h2>
+                <p>
+                    Cette plateforme centralise 4 dashboards Dash indépendants via Flask, 
+                    chacun conservant son propre code, ses KPIs et sa logique métier.
+                </p>
+                <div class="tech-stack">
+                    <div class="tech-item">
+                        <span class="tech-icon">🐍</span>
+                        <div>
+                            <strong>Flask + Dash</strong>
+                            <small>Orchestrateur & dashboards</small>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-icon">🍃</span>
+                        <div>
+                            <strong>MongoDB Atlas</strong>
+                            <small>Base de données bancaires</small>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-icon">📊</span>
+                        <div>
+                            <strong>Plotly</strong>
+                            <small>Visualisations interactives</small>
+                        </div>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-icon">🚀</span>
+                        <div>
+                            <strong>Gunicorn / Render</strong>
+                            <small>Déploiement cloud</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-diagram">
+                <div class="diagram-node node-flask">
+                    <span>Flask</span>
+                    <small>Orchestrateur</small>
+                </div>
+                <div class="diagram-arrows">
+                    <div class="arrow-row">
+                        <div class="arrow-item">
+                            <div class="diagram-node node-dash node-hospital">🏥 Hospital</div>
+                        </div>
+                        <div class="arrow-item">
+                            <div class="diagram-node node-dash node-insurance">🛡️ Insurance</div>
+                        </div>
+                        <div class="arrow-item">
+                            <div class="diagram-node node-dash node-banking">🏦 Banking</div>
+                        </div>
+                        <div class="arrow-item">
+                            <div class="diagram-node node-dash node-energy">☀️ Energy</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="diagram-sources">
+                    <div class="source-node">📄 CSV</div>
+                    <div class="source-node">🍃 MongoDB</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ─────────────────────────────────────────── -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <span class="logo-name">DataViz Platform</span>
+                <span class="footer-sep">—</span>
+                <span>Projet Data Engineering & Visualisation · M2 2026</span>
+            </div>
+            <div class="footer-right">
+                <span>Conçu par <strong>Fadel ADAM</strong></span>
+                <span class="footer-sep">·</span>
+                <span>Flask + Dash + Plotly</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Smooth scroll ──────────────────────────────────
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // ── Card hover glow effect ─────────────────────────
+        document.querySelectorAll('.sector-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', `${x}%`);
+                card.style.setProperty('--mouse-y', `${y}%`);
+            });
+        });
+
+        // ── Intersection observer for animations ──────────
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.sector-card, .stat-item, .tech-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>

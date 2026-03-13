@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: dataviz-platform
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --config gunicorn_config.py run:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.8
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: MONGODB_URI
+        sync: false # L'utilisateur devra la remplir manuellement dans Render

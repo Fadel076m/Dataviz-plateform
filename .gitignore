@@ -1,0 +1,44 @@
+# .gitignore — DataViz Analytics Platform
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+ENV/
+
+# Variables d'environnement (JAMAIS commiter!)
+.env
+!.env.example
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
+gunicorn.log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Render/Heroku
+.render/

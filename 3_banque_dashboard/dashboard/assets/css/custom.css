@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg-primary: #0A1929;
+    --bg-secondary: #0D1F2D;
+    --accent-gold: #D4AF37;
+    --accent-gold-light: #F1D279;
+    --accent-blue: #2196F3;
+    --text-main: #E2E8F0;
+    --text-muted: #94A3B8;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+body {
+    background-color: var(--bg-primary);
+    background-image: radial-gradient(circle at 50% 0%, #1A3E5C 0%, #0A1929 100%);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* --- Navigation & Tabs --- */
+.custom-tabs {
+    border: none !important;
+    gap: 15px;
+}
+
+.custom-tabs .nav-link {
+    background: var(--glass) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 12px !important;
+    color: var(--text-muted) !important;
+    padding: 12px 24px !important;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Outfit', sans-serif;
+}
+
+.custom-tabs .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: translateY(-2px);
+    color: var(--accent-gold-light) !important;
+}
+
+.custom-tabs .nav-link.active {
+    background: linear-gradient(135deg, var(--accent-gold) 0%, #B8860B 100%) !important;
+    border-color: var(--accent-gold) !important;
+    color: #000 !important;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+/* --- Cards & Containers --- */
+.card {
+    background: var(--glass) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 24px !important;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(212, 175, 55, 0.3) !important;
+    transform: scale(1.01);
+}
+
+.card-header {
+    background: transparent !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    color: var(--accent-gold);
+    padding: 20px 25px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Sidebar Refinement --- */
+.sidebar-container {
+    background: rgba(13, 31, 45, 0.95) !important;
+    backdrop-filter: blur(20px);
+    border-right: 1px solid var(--glass-border);
+    padding: 2rem 1.5rem !important;
+}
+
+.sidebar-container .text-muted {
+    color: #FFFFFF !important;
+    opacity: 0.9 !important;
+}
+
+.sidebar-container label,
+.sidebar-container .text-white {
+    color: #FFFFFF !important;
+}
+
+/* (Ancienne section Dropdown supprimée pour éviter les conflits) */
+
+
+
+
+/* --- KPI Styling --- */
+
+.kpi-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #FFFFFF 0%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+/* --- Global Content Visibility --- */
+#tab-content {
+    color: #FFFFFF !important;
+}
+
+#tab-content .card-header {
+    color: var(--accent-gold) !important;
+}
+
+#tab-content .text-muted,
+#tab-content .small,
+#tab-content p,
+#tab-content li,
+.footer-sidebar p,
+footer,
+footer .text-muted,
+.badge-gold {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+#tab-content .table,
+#tab-content table {
+    color: #FFFFFF !important;
+    background-color: transparent !important;
+}
+
+#tab-content .table td,
+#tab-content .table th,
+#tab-content table td,
+#tab-content table th {
+    background-color: transparent !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+}
+
+#tab-content .table thead th {
+    color: var(--accent-gold) !important;
+    border-bottom: 2px solid var(--accent-gold) !important;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+
+/* --- Animations --- */
+.fadeIn {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Typography --- */
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    background: linear-gradient(to right, #FFFFFF 0%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+.badge-gold {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--accent-gold);
+    border: 1px solid var(--accent-gold);
+    border-radius: 50px;
+    padding: 5px 15px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* --- Custom Scrollbar --- */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-gold);
+}
+
+/* ============================================================
+   CORRECTION ULTIME DROPDOWNS (DARK THEME)
+   ============================================================ */
+/* On force le BLEU NUIT en fond et le BLANC en texte */
+
+.custom-dropdown,
+.Select,
+.Select-control,
+.Select-value,
+.Select-value-label,
+.Select-placeholder,
+.Select-input>input,
+.Select-menu-outer,
+.Select-option,
+.VirtualizedSelectOption,
+.VirtualizedSelectFocusedOption {
+    background-color: #0c1d36 !important;
+    background: #0c1d36 !important;
+    /* On force le bleu ici aussi */
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+}
+
+/* Règle "Massive" pour tous les descendants */
+.custom-dropdown *,
+.Select *,
+.Select-control *,
+.Select-menu-outer *,
+.Select-option *,
+.VirtualizedSelectOption *,
+.VirtualizedSelectFocusedOption * {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    opacity: 1 !important;
+}
+
+/* Spécifique Placeholder et Input de recherche */
+.Select-placeholder,
+.Select-input>input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+    opacity: 1 !important;
+}
+
+.Select-input>input {
+    color: #FFFFFF !important;
+    background: transparent !important;
+}
+
+/* Couleur au survol dans la liste */
+.Select-option:hover,
+.VirtualizedSelectFocusedOption,
+.VirtualizedSelectFocusedOption * {
+    background-color: #1a3e5c !important;
+    /* Bleu légèrement plus clair */
+    color: #FFFFFF !important;
+}

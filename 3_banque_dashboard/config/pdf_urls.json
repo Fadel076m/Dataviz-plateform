@@ -1,0 +1,54 @@
+{
+    "description": "Configuration des rapports financiers BCEAO pour les banques de l'UMOA",
+    "source": "Banque Centrale des États de l'Afrique de l'Ouest (BCEAO)",
+    "note": "Les rapports sont TRIENNAUX (tous les 3 ans) et contiennent tous les pays de l'UEMOA. Nous devrons filtrer uniquement le Sénégal à l'Étape 3.",
+    "frequence": "triennale",
+    "pays_cible": "Sénégal",
+    "rapports_triennaux": [
+        {
+            "periode": "2019-2021",
+            "annee_debut": 2019,
+            "annee_fin": 2021,
+            "titre": "Bilans et comptes de résultat des banques UMOA 2019-2021",
+            "fichier": "bilans_2019_2021.pdf",
+            "dossier": "2019-2021",
+            "statut": "telecharge",
+            "note": "Rapport téléchargé manuellement par l'utilisateur"
+        },
+        {
+            "periode": "2021-2023",
+            "annee_debut": 2021,
+            "annee_fin": 2023,
+            "titre": "Bilans et comptes de résultat des banques UMOA 2021-2023",
+            "fichier": "bilans_2021_2023.pdf",
+            "dossier": "2021-2023",
+            "statut": "telecharge",
+            "note": "Rapport téléchargé manuellement par l'utilisateur"
+        }
+    ],
+    "pays_umoa": [
+        "Bénin",
+        "Burkina Faso",
+        "Côte d'Ivoire",
+        "Guinée-Bissau",
+        "Mali",
+        "Niger",
+        "Sénégal",
+        "Togo"
+    ],
+    "etape_3_filtrage": {
+        "pays_cible": "Sénégal",
+        "mots_cles_filtrage": [
+            "Sénégal",
+            "SENEGAL",
+            "Dakar"
+        ],
+        "strategie": "Extraction OCR puis filtrage des lignes contenant 'Sénégal' ou noms de banques sénégalaises"
+    },
+    "notes_techniques": [
+        "Les rapports sont publiés tous les 3 ans",
+        "Chaque PDF contient les données pour tous les pays de l'UMOA",
+        "À l'Étape 3, nous devrons extraire uniquement les données du Sénégal",
+        "Le prochain rapport triennial sera probablement 2024-2026 (publié en 2027)"
+    ]
+}

@@ -1,0 +1,25 @@
+# Variables d'environnement sensibles
+.env
+
+# Environnements virtuels Python
+.venv/
+venv/
+env/
+
+# Fichiers Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Données et logs
+*.log
+data/*.csv
+data/*.xlsx
+!data/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

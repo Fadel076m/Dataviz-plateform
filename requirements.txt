@@ -1,0 +1,38 @@
+# ==============================================================
+# requirements.txt — Dépendances unifiées
+# DataViz Analytics Platform (Flask + 4 x Dash)
+# ==============================================================
+
+# ── Orchestrateur ──────────────────────────────────────────────
+flask>=3.0.0
+werkzeug>=3.0.0
+
+# ── Dashboards Dash ────────────────────────────────────────────
+dash>=2.14.0
+dash-bootstrap-components>=1.5.0
+
+# ── Visualisations ─────────────────────────────────────────────
+plotly>=5.18.0
+
+# ── Data Science ───────────────────────────────────────────────
+pandas>=2.1.0
+numpy>=1.26.0
+statsmodels>=0.14.0
+scipy>=1.11.0
+
+# ── Base de données ────────────────────────────────────────────
+pymongo[srv]>=4.6.1
+python-dotenv>=1.0.0
+
+# ── Scraping & Ingestion (pipeline banque) ─────────────────────
+requests>=2.31.0
+beautifulsoup4>=4.12.2
+lxml>=4.9.3
+openpyxl>=3.1.2
+pdfplumber>=0.11.0
+
+# ── Serveur production ─────────────────────────────────────────
+gunicorn>=21.2.0
+
+# ── Utilitaires ────────────────────────────────────────────────
+python-dateutil>=2.8.2
