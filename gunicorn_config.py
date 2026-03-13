@@ -7,8 +7,8 @@ import os
 
 # ── Serveur ──────────────────────────────────────────────────
 bind    = f"0.0.0.0:{os.getenv('PORT', '5000')}"
-workers = 2           # 2 workers pour les dashboards multi-datasources
-threads = 4           # 4 threads par worker (I/O bound : MongoDB, CSV)
+workers = 1           # Limité à 1 pour économiser la RAM sur le plan Free
+threads = 2           # Réduit également pour limiter l'empreinte mémoire
 
 # ── Timeouts ─────────────────────────────────────────────────
 timeout       = 120   # 2 min : important pour le chargement du CSV Energy (~3 MB)
